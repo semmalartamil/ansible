@@ -1,6 +1,6 @@
 ---
 - name: Install Nginx
-  hosts: all
+  hosts: ANSIBLE
   remote_user: ec2-user
   become: yes
 
