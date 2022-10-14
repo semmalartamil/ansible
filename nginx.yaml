@@ -1,20 +1,8 @@
 ---
-- hosts: all
-  remote_user: ec2-user
+- name: Install Nginx
+  hosts: all
+  remote_user: ubuntu
   become: yes
-  tasks:
 
-  - name: Basically "yum"
-    yum:
-      update_cache: yes
-
-  - name: Install NGINX Packages
-    yum:
-      name: nginx
-      state: latest
-
-  - name: Start Service
-    service:
-      name: nginx
-      state: restarted
-      enabled: yes
+  roles:
+  - nginx
